@@ -104,4 +104,4 @@ dist
 .tern-port
 
 #Node modules
-node_modules
+/node_modules
