@@ -1,0 +1,77 @@
+{
+  "name": "autonote",
+  "version": "0.1.0",
+  "private": true,
+  "proxy": "http://localhost:4000",
+  "license": "MIT",
+  "dependencies": {
+    "@babel/core": "^7.17.9",
+    "@electron/remote": "^2.0.8",
+    "autoprefixer": "^10.4.4",
+    "body-parser": "^1.19.2",
+    "concurrently": "^7.1.0",
+    "cors": "^2.8.5",
+    "cross-env": "^7.0.3",
+    "electron": "18.1",
+    "electron-builder": "^22.14.13",
+    "electron-packager": "^15.5.1",
+    "express": "^4.17.3",
+    "puppeteer-core": "^13.6.0",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "react-scripts": "5.0.0",
+    "wait-on": "^6.0.1"
+  },
+  "main": "public/main.js",
+  "homepage": "./",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "electron:serve": "concurrently -k \"cross-env BROWSER=none react-scripts start\" \"node ./src/server.js\" \"electron .\"",
+    "electron:build": "yarn build && electron-builder",
+    "electron:start": "wait-on tcp:3000 && electron ."
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/plugin-syntax-flow": "^7.16.7",
+    "@babel/plugin-transform-react-jsx": "^7.17.3",
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.4",
+    "electron-packager": "^15.5.1",
+    "nodemon": "^2.0.15",
+    "postcss": "^8.4.12",
+    "typescript": "^4.6.3",
+    "upgrade": "^1.1.0"
+  },
+  "peerDependencies": {
+    "@babel/plugin-syntax-flow": "^7.16.7",
+    "@babel/plugin-transform-react-jsx": "^7.17.3",
+    "@testing-library/dom": "^8.13.0",
+    "@testing-library/react": "^13.0.0",
+    "@testing-library/user-event": "^14.0.4",
+    "autoprefixer": "^10.4.4",
+    "postcss": "^8.4.12",
+    "typescript": "^4.6.3",
+    "upgrade": "^1.1.0"
+  }
+}
